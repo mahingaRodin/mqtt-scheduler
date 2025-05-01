@@ -12,7 +12,7 @@ MQTT_TOPIC = 'relay/schedule'
 # Store the latest schedule
 schedule = {'on_time': None, 'off_time': None}
 
-async def handle_connection(websocket, path):
+async def handle_connection(websocket, path=None):
     try:
         async for message in websocket:
             data = json.loads(message)
